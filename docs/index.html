@@ -3,52 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Efficiency-corrected RT-qPCR — CCAT1 intron1 / MYC intron1 (demo)</title>
+<title>Efficiency-corrected RT-qPCR — method demo</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>Efficiency-corrected RT-qPCR analysis</h1>
-    <p class="sub">CCAT1 intron1 normalized to MYC intron1 — HCT116 WT — demonstration</p>
+    <h1>Efficiency-corrected RT-qPCR</h1>
+    <p class="sub">How to correct RT-qPCR Cq data for amplification efficiency — a method demonstration</p>
   </header>
 
   <div class="banner">
-    <strong>Synthetic demo.</strong> All values on this page are randomly generated
-    dummy data. Nothing here is a real experimental result.
+    <strong>Synthetic demo.</strong> Every value here is randomly generated. This
+    is a method illustration, not a real experiment or result.
   </div>
 
-  <h2>Normalized CCAT1/MYC ratio</h2>
-  <table>
-    <thead>
-      <tr><th>Cell confluency</th><th>R1</th><th>R2</th><th>R3</th><th>Mean</th><th>SD</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>0.1</td><td>0.446925</td><td>0.495239</td><td>0.436762</td><td>0.459642</td><td>0.031244</td></tr>
-      <tr><td>0.5</td><td>0.821351</td><td>0.893508</td><td>0.580211</td><td>0.765024</td><td>0.164068</td></tr>
-      <tr><td>1.0</td><td>0.221490</td><td>0.299057</td><td>0.675234</td><td>0.398594</td><td>0.242697</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Standard-curve quality</h2>
-  <table>
-    <thead><tr><th>Target</th><th>R²</th><th>Efficiency</th><th>Assessment</th></tr></thead>
-    <tbody>
-      <tr><td>CCAT1 intron1</td><td>0.999754</td><td>94.92%</td><td>Within 90–110%</td></tr>
-      <tr><td>MYC intron1</td><td>0.999960</td><td>98.84%</td><td>Within 90–110%</td></tr>
-    </tbody>
-  </table>
+  <h2>Why correct for efficiency?</h2>
+  <p class="muted">
+    The 2^(−ΔΔCt) shortcut assumes every assay doubles its product each cycle
+    (100% efficiency). When a target and reference assay differ in efficiency, an
+    uncorrected ratio is biased. Efficiency correction rescales each Cq to a
+    common 100%-efficiency basis (the Pfaffl principle) before quantities are
+    compared.
+  </p>
 
   <h2>Calculation</h2>
   <pre>Efficiency (%)   = (-1 + 10^(-1 / slope)) * 100
 E                = 1 + Efficiency(%) / 100
 Ct(100%)         = Cq * log2(E)
 Quantity         = 100 * 2^( mean(std100 Ct(100%)) - sample Ct(100%) )
-Normalized ratio = CCAT1 quantity / MYC quantity</pre>
-  <p class="muted">
-    Ratios are computed per matched technical replicate, averaged per biological
-    replicate, then summarized (mean, SD) across replicates for each confluency.
-  </p>
+Normalized ratio = Target quantity / Reference quantity</pre>
+
+  <h2>Normalized Target / Reference ratio</h2>
+  <table>
+    <thead>
+      <tr><th>Group</th><th>Rep 1</th><th>Rep 2</th><th>Rep 3</th><th>Mean</th><th>SD</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>A</td><td>0.446925</td><td>0.495239</td><td>0.436762</td><td>0.459642</td><td>0.031244</td></tr>
+      <tr><td>B</td><td>0.821351</td><td>0.893508</td><td>0.580211</td><td>0.765024</td><td>0.164068</td></tr>
+      <tr><td>C</td><td>0.221490</td><td>0.299057</td><td>0.675234</td><td>0.398594</td><td>0.242697</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Standard-curve quality</h2>
+  <table>
+    <thead><tr><th>Assay</th><th>R²</th><th>Efficiency</th></tr></thead>
+    <tbody>
+      <tr><td>Target</td><td>0.999754</td><td>94.92%</td></tr>
+      <tr><td>Reference</td><td>0.999960</td><td>98.84%</td></tr>
+    </tbody>
+  </table>
 
   <footer>
     Generated from a seeded synthetic dataset. Reproduce with
