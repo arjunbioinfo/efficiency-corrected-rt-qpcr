@@ -4,7 +4,6 @@
 .Ruserdata
 .Rproj.user/
 __pycache__/
-_dataset.json
 results/generated/*.csv
 !results/generated/.gitkeep
 ~$*.xlsx
