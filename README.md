@@ -29,7 +29,8 @@ Normalized ratio = Target quantity / Reference quantity
 ```
 
 The ratio is computed per matched technical replicate, averaged per biological
-replicate, then summarized (mean, SD) across replicates within each group.
+replicate, then summarized (mean, SD) across replicates within each group. See
+`references/efficiency_correction_method.md` for a fuller walkthrough.
 
 ## Result on the synthetic data
 
@@ -75,7 +76,7 @@ python3 tools/generate_dummy_data.py
 R/             Reproducible R analysis
 tools/         Seeded synthetic-data generator
 data/raw/      Synthetic raw Cq workbook (analysis input)
-references/    Pfaffl method template
+references/    Pfaffl method template + efficiency-correction method note
 results/       Live-formula workbook, static values snapshot, summary CSV
 docs/          Static HTML report (GitHub Pages source)
 ```
