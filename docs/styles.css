@@ -1,0 +1,25 @@
+:root {
+  --bg: #0f172a; --panel: #1e293b; --ink: #e2e8f0; --muted: #94a3b8;
+  --accent: #38bdf8; --line: #334155; --warn-bg: #422006; --warn-ink: #fde68a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg); color: var(--ink); line-height: 1.6;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+header h1 { margin: 0 0 .25rem; font-size: 1.7rem; }
+header p.sub { color: var(--muted); margin: 0 0 1.25rem; }
+.banner {
+  background: var(--warn-bg); color: var(--warn-ink); border: 1px solid #78350f;
+  padding: .75rem 1rem; border-radius: 8px; font-size: .95rem; margin-bottom: 1.75rem;
+}
+h2 { font-size: 1.2rem; margin: 2rem 0 .75rem; border-bottom: 1px solid var(--line); padding-bottom: .35rem; }
+table { width: 100%; border-collapse: collapse; margin: .5rem 0 1rem; font-variant-numeric: tabular-nums; }
+th, td { padding: .5rem .6rem; text-align: right; border-bottom: 1px solid var(--line); }
+th:first-child, td:first-child { text-align: left; }
+thead th { color: var(--accent); font-weight: 600; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+pre { background: var(--panel); padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: .85rem; }
+.muted { color: var(--muted); font-size: .9rem; }
+footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; }
