@@ -1,5 +1,10 @@
 # Efficiency-corrected RT-qPCR
 
+[![CI](https://github.com/arjunbioinfo/efficiency-corrected-rt-qpcr/actions/workflows/ci.yml/badge.svg)](https://github.com/arjunbioinfo/efficiency-corrected-rt-qpcr/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![R](https://img.shields.io/badge/R-276DC3?logo=r&logoColor=white)](https://www.r-project.org/)
+[![Live report](https://img.shields.io/badge/report-live-2b7a78)](https://arjunbioinfo.github.io/efficiency-corrected-rt-qpcr/)
+
 A small, self-contained demonstration of how to apply **amplification-efficiency
 correction** to RT-qPCR Cq data and compute a normalized target/reference ratio.
 
@@ -62,7 +67,8 @@ Rscript R/analyze_qpcr.R
 ```
 
 The script reads `data/raw/qpcr_raw_ct.xlsx`, writes CSVs to `results/generated/`,
-and checks its group summary against `results/efficiency_corrected_ratio_summary.csv`.
+and checks its group summary against `results/efficiency_corrected_ratio_summary.csv`,
+exiting with an error if they differ (this is what CI runs on every push).
 
 Regenerate the synthetic dataset from the seed:
 

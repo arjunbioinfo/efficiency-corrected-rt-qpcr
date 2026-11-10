@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Efficiency-corrected RT-qPCR"
+abstract: >-
+  A self-contained demonstration of Pfaffl-style amplification-efficiency correction for RT-qPCR Cq data, on seeded synthetic data.
+type: software
+authors:
+  - family-names: Thippana
+    given-names: Mallikarjuna
+repository-code: "https://github.com/arjunbioinfo/efficiency-corrected-rt-qpcr"
+url: "https://arjunbioinfo.github.io/"
+license: MIT
+keywords:
+  - bioinformatics
+  - qpcr
+  - rt-qpcr
+  - pfaffl
+  - r
