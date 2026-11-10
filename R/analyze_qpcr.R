@@ -73,8 +73,9 @@ write.csv(group, file.path(out_dir, "group_summary.csv"), row.names = FALSE)
 ref_path <- file.path(root, "results", "efficiency_corrected_ratio_summary.csv")
 if (file.exists(ref_path)) {
   r <- read.csv(ref_path)
-  cat(sprintf("Group summary matches committed snapshot: %s\n",
-              isTRUE(all.equal(group$mean_ratio, r$mean_ratio, tolerance = 1e-4))))
+  matches <- isTRUE(all.equal(group$mean_ratio, r$mean_ratio, tolerance = 1e-4))
+  cat(sprintf("Group summary matches committed snapshot: %s\n", matches))
+  if (!matches) stop("Group summary differs from results/efficiency_corrected_ratio_summary.csv")
 }
 print(group)
 cat("\nWrote CSVs to", out_dir, "\n")
