@@ -89,3 +89,8 @@ docs/          Static HTML report (GitHub Pages source)
 
 `*_live.xlsx` keeps the formulas (recalculates in Excel); `*_values.xlsx` is the
 same sheet with formulas evaluated to static numbers.
+
+## Author
+
+**Mallikarjuna Thippana, PhD** — Computational Biologist, Karolinska Institutet  
+[Portfolio](https://arjunbioinfo.github.io/) · [ORCID](https://orcid.org/0000-0001-8485-8626) · [Google Scholar](https://scholar.google.com/citations?user=NpLUj68AAAAJ) · [GitHub](https://github.com/arjunbioinfo)
